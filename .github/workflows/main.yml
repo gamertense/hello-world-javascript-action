@@ -1,0 +1,22 @@
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: "Hello World"
+
+    steps:
+      # - uses: actions/checkout@v2
+
+      # - name: Install dependencies
+      #   run: npm install
+
+      # - name: Build
+      #   run: npm run build
+
+      - name: Hello world action step
+        uses: gamertense/hello-world-javascript-action@v1.3
+        with:
+          who-to-greet: "Jack"
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
